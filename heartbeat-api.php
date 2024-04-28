@@ -34,7 +34,7 @@ add_action('admin_menu', function () {
 
 function hapi_heartbeat_received($response, $data)
 {
-    if ($data['message']) {
+    if ($data['message'] ?? false) {
         $response['message'] = $data['message'];
         $response['status'] = 'success';
     }
